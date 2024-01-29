@@ -28,7 +28,7 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
+            <Header/>
             {children}
             <Footer />
             <ThemeSwitch />
