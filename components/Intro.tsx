@@ -10,7 +10,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useState, useEffect } from "react";
-import meImg from "@/public/meImg.jpg";
+// import meImg from "@/public/meImg.jpg";
 import ReactRotatingText from "react-rotating-text";
 
 
@@ -35,15 +35,15 @@ export default function Intro() {
               duration: 0.2,
             }}
           >
-            <Image
-              src={meImg}
+            {/* <Image
+              // src={meImg}
               alt="Jacob portrait"
               width="384" // Double the original width
               height="384" // Double the original height
               quality="95"
               priority={true}
               className="h-64 w-64 rounded-full object-cover border-[0.25rem] border-white shadow-xl"
-            />
+            /> */}
           </motion.div>
 
           <motion.span
