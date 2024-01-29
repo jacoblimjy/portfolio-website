@@ -10,7 +10,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useState, useEffect } from "react";
-import meImg from "@/public/IMG_9893.jpg";
+import meImg from "@/public/meImg.jpg";
 import ReactRotatingText from "react-rotating-text";
 
 
