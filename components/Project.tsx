@@ -9,14 +9,10 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 
 type ProjectProps = {
-  title: string;
-  description: string;
-  tags: readonly string[];
-  imageUrl: string;
-  gitHubUrl: string;
-  otherUrl?: string; // otherUrl is now an optional property
+  [K in keyof (typeof projectsData)[number]]: (typeof projectsData)[number][K];
+} & {
+  otherUrl?: string;
 };
-// type ProjectProps = (typeof projectsData)[number]; //what this do is that it takes the type of the first element in the array and apply it to the rest of the elements in the array
 
 export default function Project({
   title,
