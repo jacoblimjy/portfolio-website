@@ -8,7 +8,15 @@ import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = {
+  title: string;
+  description: string;
+  tags: string[];
+  imageUrl: string;
+  gitHubUrl: string;
+  otherUrl?: string; // otherUrl is now an optional property
+};
+// type ProjectProps = (typeof projectsData)[number]; //what this do is that it takes the type of the first element in the array and apply it to the rest of the elements in the array
 
 export default function Project({
   title,
@@ -16,6 +24,7 @@ export default function Project({
   tags,
   imageUrl,
   gitHubUrl,
+  //make otherUrl optional
   otherUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null); //this is for the scroll animation effect
