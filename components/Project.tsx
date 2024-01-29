@@ -11,7 +11,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 type ProjectProps = {
   title: string;
   description: string;
-  tags: string[];
+  tags: readonly string[];
   imageUrl: string;
   gitHubUrl: string;
   otherUrl?: string; // otherUrl is now an optional property
