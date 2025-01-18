@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Set consistent spacing for all sections */
+section {
+  padding: 1.5rem; /* Mobile padding */
+}
+
+@media (min-width: 640px) {
+  section {
+    padding: 2rem 4rem; /* Larger screens */
+  }
+}
+

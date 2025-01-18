@@ -9,18 +9,16 @@ import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Intro/>
-      {/* <SectionDivider/> */}
-      <About/>  
-      <SectionDivider/>
-      <Projects/>
-      <SectionDivider/>
-      <Skills/>
-      <SectionDivider/>
-      <Experience/>
-      {/* <SectionDivider/> */}
-      <Contact/>
-    </main>
-  )
+		<main className="flex flex-col items-center justify-center w-full px-4 sm:px-6 lg:px-12">
+			<Intro />
+			<About />
+			<SectionDivider />
+			<Experience />
+			<SectionDivider />
+			<Projects />
+			<SectionDivider />
+			<Skills />
+			<Contact />
+		</main>
+	);
 }
