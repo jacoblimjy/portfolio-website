@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
 	children,
 }: ThemeContextProviderProps) {
-	const [theme, setTheme] = useState<Theme>("light");
+	const [theme, setTheme] = useState<Theme>("dark");
 
 	// Function to apply the theme to the HTML tag
 	const applyTheme = (theme: Theme) => {
