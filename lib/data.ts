@@ -21,14 +21,6 @@ export const links = [
   { name: "Contact",    hash: "#contact"    },
 ] as const;
 
-// each link object
-export type SectionLink = (typeof links)[number];
-
-// *new* — union of all the link.name strings
-export type SectionName = SectionLink["name"];
-
-
-
 export const experiencesData = [
 	{
 		company: "GovTech",

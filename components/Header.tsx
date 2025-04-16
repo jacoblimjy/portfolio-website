@@ -2,14 +2,15 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { links } from "@/lib/data";
+import { links } from "../lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { useGlobalScrollSpy } from "@/lib/hooks";
+import { useGlobalScrollSpy } from "../lib/hooks";
 
 export default function Header() {
 	// 👇 kick off the scroll‑spy
+	// by passing the links to the hook
 	useGlobalScrollSpy(links);
 
 	const { activeSection, setActiveSection, setTimeOfLastClick } =
