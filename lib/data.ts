@@ -11,32 +11,23 @@ import courserecommendationImg from "@/public/courserecommendation.png";
 import stocksentimentImg from "@/public/stocksentiment.png";
 import travelpalImg from "@/public/travelpal.png";
 
+// lib/data.ts
 export const links = [
-	{
-		name: "Home",
-		hash: "#home",
-	},
-	{
-		name: "About",
-		hash: "#about",
-	},
-	{
-		name: "Experience",
-		hash: "#experience",
-	},
-	{
-		name: "Projects",
-		hash: "#projects",
-	},
-	{
-		name: "Skills",
-		hash: "#skills",
-	},
-	{
-		name: "Contact",
-		hash: "#contact",
-	},
+  { name: "Home",       hash: "#home"       },
+  { name: "About",      hash: "#about"      },
+  { name: "Experience", hash: "#experience" },
+  { name: "Projects",   hash: "#projects"   },
+  { name: "Skills",     hash: "#skills"     },
+  { name: "Contact",    hash: "#contact"    },
 ] as const;
+
+// each link object
+export type SectionLink = (typeof links)[number];
+
+// *new* — union of all the link.name strings
+export type SectionName = SectionLink["name"];
+
+
 
 export const experiencesData = [
 	{
@@ -63,7 +54,7 @@ export const experiencesData = [
 	},
 	{
 		company: "Income Insurance Limited",
-		title: "Data Science Intern",
+		title: "Machine Learning Engineer Intern",
 		location: "Singapore",
 		description:
 			"Spearheaded the development and implementation of a cutting-edge Generative AI solution utilizing LlamaIndex and large language models, automating the extraction of critical features from highly complex and unstructured insurance policy documents. This automation reduced the review time by 80% and the features are subsequently integrated into downstream propensity models, enhancing predictive accuracy.\n" +
