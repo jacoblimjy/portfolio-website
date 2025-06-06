@@ -44,11 +44,11 @@ export default function Projects() {
               quality={95}
             />
             <div className="p-4 text-left">
-              <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-200 mb-2 overflow-hidden max-h-16">{project.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+              <p className="text-base text-gray-200 mb-2 overflow-hidden max-h-16">{project.description}</p>
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag, idx) => (
-                  <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
+                  <li key={idx} className="px-2 py-1 text-sm bg-white/20 rounded-full text-gray-200">
                     {tag}
                   </li>
                 ))}
@@ -66,7 +66,7 @@ export default function Projects() {
           onClick={() => setSelected(null)}
         >
         <motion.div
-          className="bg-gray-900/90 backdrop-blur-lg border border-white/20 rounded-xl max-w-lg w-full p-6 relative"
+          className="bg-gray-800/90 backdrop-blur-lg border border-white/20 rounded-xl max-w-lg w-full max-h-[80vh] overflow-y-auto p-6 relative"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             onClick={(e) => e.stopPropagation()}
@@ -77,17 +77,17 @@ export default function Projects() {
             >
               &times;
             </button>
-            <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
+            <h3 className="text-2xl font-semibold text-white mb-2">{selected.title}</h3>
             <Image
               src={selected.imageUrl}
               alt={selected.title}
               className="w-full h-48 object-cover rounded mb-4"
               quality={95}
             />
-            <p className="text-gray-200 mb-4 whitespace-pre-line">{selected.description}</p>
+            <p className="text-base text-gray-200 mb-4 whitespace-pre-line">{selected.description}</p>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
-                <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
+                <li key={idx} className="px-2 py-1 text-sm bg-white/20 rounded-full text-gray-200">
                   {tag}
                 </li>
               ))}
