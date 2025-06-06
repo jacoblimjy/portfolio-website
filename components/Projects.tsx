@@ -8,9 +8,13 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
+type ProjectProps = {
+  [K in keyof (typeof projectsData)[number]]: (typeof projectsData)[number][K];
+} & { otherUrl?: string };
+
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
-  const [selected, setSelected] = useState<(typeof projectsData)[number] | null>(null);
+  const [selected, setSelected] = useState<ProjectProps | null>(null);
 
   return (
     <motion.section
