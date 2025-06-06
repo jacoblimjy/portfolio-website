@@ -31,12 +31,20 @@ export default function PatternedImage({ src, alt, className = "object-contain r
       fac
         .getColorAsync(url)
         .then((color) => {
-          const light = lighten(color.hex, 20);
-          setBg(`repeating-linear-gradient(45deg, ${color.hex}, ${color.hex} 10px, ${light} 10px, ${light} 20px)`);
+          const light = lighten(color.hex, 40);
+          const overlay =
+            "repeating-radial-gradient(circle, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 2px, transparent 2px, transparent 8px)";
+          setBg(`${overlay}, radial-gradient(circle at center, ${color.hex}, ${light})`);
         })
-        .catch(() => setBg("#ddd"));
+        .catch(() =>
+          setBg(
+            "repeating-radial-gradient(circle, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 2px, transparent 2px, transparent 8px), radial-gradient(circle at center, #ccc, #eee)"
+          )
+        );
     } else {
-      setBg("repeating-linear-gradient(45deg, #ccc, #ccc 10px, #eee 10px, #eee 20px)");
+      setBg(
+        "repeating-radial-gradient(circle, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 2px, transparent 2px, transparent 8px), radial-gradient(circle at center, #ccc, #eee)"
+      );
     }
   }, [src]);
 
