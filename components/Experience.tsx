@@ -24,17 +24,18 @@ export default function Experience() {
 			<SectionHeading>My Experience</SectionHeading>
 			<div className="grid grid-cols-1 gap-8">
 				{experiencesData.map((item, index) => (
-					<motion.div
-						key={index}
-						className={`group relative flex flex-col bg-gradient-to-r ${
-							theme === "light"
-								? "from-gray-100 to-white"
-								: "from-gray-800 to-gray-900"
-						} p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105`}
-						initial={{ opacity: 0, y: 50 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: index * 0.1 }}
-					>
+                                        <motion.div
+                                                key={index}
+                                                className={`group relative flex flex-col bg-gradient-to-r ${
+                                                        theme === "light"
+                                                                ? "from-gray-100 to-white"
+                                                                : "from-gray-800 to-gray-900"
+                                                } p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105`}
+                                                initial={{ opacity: 0, y: 50 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: index * 0.1 }}
+                                        >
 						{/* Icon Badge */}
 						<div
 							className={`absolute -top-5 right-5 flex items-center justify-center w-12 h-12 rounded-full shadow-md ${
@@ -60,8 +61,8 @@ export default function Experience() {
                                                 <div className="mt-4 text-left text-gray-300 space-y-2">
                                                         <ul className="space-y-2">
                                                                 {item.description.split("\n").map((line, lineIndex) => (
-                                                                        <li key={lineIndex} className="flex gap-2">
-                                                                                <BsCheckCircle className="text-green-500 mt-1" />
+                                                                        <li key={lineIndex} className="flex items-start gap-2 text-sm">
+                                                                                <BsCheckCircle className="text-green-500 w-4 h-4 mt-[2px] flex-shrink-0" />
                                                                                 <span>{line}</span>
                                                                         </li>
                                                                 ))}

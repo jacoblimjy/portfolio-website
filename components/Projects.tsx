@@ -33,6 +33,9 @@ export default function Projects() {
             whileHover={{ scale: 1.03 }}
             className="cursor-pointer bg-gray-800 rounded-lg shadow-lg overflow-hidden group"
             onClick={() => setSelected(project)}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
             <Image
               src={project.imageUrl}

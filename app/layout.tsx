@@ -29,8 +29,16 @@ export default function RootLayout({
                         <body
                                 className="relative text-gray-50 font-sans"
                         >
-                                {/* Background gradient */}
-                                <div className="fixed inset-0 -z-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black"></div>
+                                {/* Background image */}
+                                <div
+                                        className="fixed inset-0 -z-30 bg-center bg-cover bg-no-repeat"
+                                        style={{
+                                                backgroundImage:
+                                                        "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80')",
+                                        }}
+                                />
+                                {/* Dark overlay for readability */}
+                                <div className="fixed inset-0 -z-20 bg-black/70" />
 
                                 <ThemeContextProvider>
                                         <ActiveSectionContextProvider>
