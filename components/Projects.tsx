@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaImage } from "react-icons/fa";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -40,12 +40,18 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              className="h-40 w-full object-cover group-hover:opacity-90"
-              quality={95}
-            />
+            {project.imageUrl ? (
+              <Image
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-48 object-contain bg-gray-200"
+                quality={95}
+              />
+            ) : (
+              <div className="flex items-center justify-center w-full h-48 bg-gray-200">
+                <FaImage className="w-12 h-12 text-gray-400" />
+              </div>
+            )}
             <div className="p-4 text-left">
               <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
               <p className="text-base text-gray-200 mb-2 overflow-hidden max-h-16">{project.description}</p>
@@ -90,12 +96,18 @@ export default function Projects() {
               &times;
             </button>
             <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
-            <Image
-              src={selected.imageUrl}
-              alt={selected.title}
-              className="w-full h-48 object-cover rounded mb-4"
-              quality={95}
-            />
+            {selected.imageUrl ? (
+              <Image
+                src={selected.imageUrl}
+                alt={selected.title}
+                className="w-full h-60 object-contain bg-gray-200 rounded mb-4"
+                quality={95}
+              />
+            ) : (
+              <div className="flex items-center justify-center w-full h-60 bg-gray-200 rounded mb-4">
+                <FaImage className="w-12 h-12 text-gray-400" />
+              </div>
+            )}
             <p className="text-base text-gray-200 mb-4 whitespace-pre-line">{selected.description}</p>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
