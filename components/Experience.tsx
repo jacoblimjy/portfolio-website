@@ -26,7 +26,7 @@ export default function Experience() {
                                 {experiencesData.map((item, index) => (
                                         <motion.div
                                                 key={index}
-                                                className="group relative flex flex-col bg-white/10 border border-white/20 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
+                                                className="group relative flex flex-col bg-white/20 border border-white/30 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
                                                 initial={{ opacity: 0, y: 50 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
@@ -42,20 +42,20 @@ export default function Experience() {
                                                 </div>
 
 						<div className="text-left">
-							<h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">
+                                                        <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">
 								{item.company}
 							</h3>
-							<h4 className="text-md sm:text-lg font-medium text-gray-600 dark:text-gray-300 italic">
+                                                        <h4 className="text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-300 italic">
 								{item.title}
 							</h4>
-							<p className="text-sm text-gray-500">{item.location}</p>
-							<p className="text-sm text-gray-500">{item.date}</p>
+                                                        <p className="text-base text-gray-400">{item.location}</p>
+                                                        <p className="text-base text-gray-400">{item.date}</p>
 						</div>
 
                                                 <div className="mt-4 text-left text-gray-200 space-y-2">
                                                         <ul className="space-y-2">
                                                                 {item.description.split("\n").map((line, lineIndex) => (
-                                                                        <li key={lineIndex} className="flex items-start gap-2 text-sm">
+                                                                        <li key={lineIndex} className="flex items-start gap-2 text-base">
                                                                                 <BsCheckCircle className="text-green-400 w-4 h-4 mt-[2px] flex-shrink-0" />
                                                                                 <span>{line}</span>
                                                                         </li>

@@ -37,7 +37,7 @@ export default function Skills() {
 			<ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-8">
 				{skillsData.map((skill, index) => (
 					<motion.li
-						className="flex items-center justify-center bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md p-3 text-xs sm:text-sm font-medium text-gray-800 dark:text-white transform transition-transform hover:scale-105 hover:shadow-xl"
+                                                className="flex items-center justify-center bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-lg shadow-md p-3 text-sm sm:text-base font-medium text-gray-800 dark:text-white transform transition-transform hover:scale-105 hover:shadow-xl"
 						key={index}
 						variants={fadeInAnimationVariants}
 						initial="initial"
