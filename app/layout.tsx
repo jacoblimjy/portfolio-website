@@ -67,20 +67,20 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 			</head>
 
-			<body
-				className={`${inter.className} bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-50 relative`}
-			>
-				<div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-				<div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+                        <body
+                                className={`${inter.className} relative text-gray-50`}
+                        >
+                                {/* Background gradient */}
+                                <div className="fixed inset-0 -z-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black"></div>
 
-				<ThemeContextProvider>
-					<ActiveSectionContextProvider>
-						<Header />
-						{children}
+                                <ThemeContextProvider>
+                                        <ActiveSectionContextProvider>
+                                                <Header />
+                                                {children}
                                                 <Footer />
-					</ActiveSectionContextProvider>
-				</ThemeContextProvider>
-			</body>
+                                        </ActiveSectionContextProvider>
+                                </ThemeContextProvider>
+                        </body>
 		</html>
 	);
 }

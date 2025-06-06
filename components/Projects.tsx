@@ -1,116 +1,115 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
-type ProjectProps = {
-	[K in keyof (typeof projectsData)[number]]: (typeof projectsData)[number][K];
-} & {
-	otherUrl?: string;
-};
-
 export default function Projects() {
-	const { ref } = useSectionInView("Projects", 0.5);
+  const { ref } = useSectionInView("Projects", 0.5);
+  const [selected, setSelected] = useState<(typeof projectsData)[number] | null>(null);
 
-	return (
-		<motion.section
-			ref={ref}
-			className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[60rem] px-4 sm:px-8 text-center text-justify"
-			initial={{ opacity: 0, y: 100 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ delay: 0.175 }}
-			id="projects"
-		>
-			<SectionHeading>My Projects</SectionHeading>
-			<div className="grid gap-8 mt-8">
-				{projectsData.map((project, index) => (
-					<Project key={index} {...project} />
-				))}
-			</div>
-		</motion.section>
-	);
-}
+  return (
+    <motion.section
+      ref={ref}
+      className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[90%] sm:max-w-[70rem] mx-auto text-center"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+      id="projects"
+    >
+      <SectionHeading>My Projects</SectionHeading>
+      <div className="grid gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-3">
+        {projectsData.map((project, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.03 }}
+            className="cursor-pointer bg-gray-800 rounded-lg shadow-lg overflow-hidden group"
+            onClick={() => setSelected(project)}
+          >
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              className="h-40 w-full object-cover group-hover:opacity-90"
+              quality={95}
+            />
+            <div className="p-4 text-left">
+              <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-300 mb-2 overflow-hidden max-h-16">{project.description}</p>
+              <ul className="flex flex-wrap gap-2">
+                {project.tags.map((tag, idx) => (
+                  <li key={idx} className="px-2 py-1 text-xs bg-gray-700 rounded-full text-gray-200">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
-function Project({
-	title,
-	description,
-	tags,
-	imageUrl,
-	gitHubUrl,
-	otherUrl,
-}: ProjectProps) {
-	const ref = useRef<HTMLDivElement>(null);
-	const { scrollYProgress } = useScroll({
-		target: ref,
-		offset: ["0 1", "1.33 1"],
-	});
-	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
-	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
-	return (
-		<motion.div
-			ref={ref}
-			style={{ scale: scaleProgress, opacity: opacityProgress }}
-			className="group relative border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-gray-800 dark:border-gray-700"
-		>
-			<div className="flex flex-col sm:flex-row items-stretch">
-				<div className="flex flex-col justify-between p-6 sm:w-1/2 lg:w-2/3">
-					<h3 className="text-lg sm:text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-						{title}
-					</h3>
-					<p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-						{description}
-					</p>
-					<ul className="flex flex-wrap gap-2 mb-4">
-						{tags.map((tag, index) => (
-							<li
-								key={index}
-								className="px-3 py-1 text-xs sm:text-sm bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full uppercase tracking-wide"
-							>
-								{tag}
-							</li>
-						))}
-					</ul>
-					<div className="flex items-center gap-4">
-						{gitHubUrl && (
-							<a
-								href={gitHubUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="GitHub Repository"
-								className="text-gray-800 dark:text-white text-lg sm:text-xl hover:text-blue-600 dark:hover:text-blue-400 transition"
-							>
-								<FaGithub />
-							</a>
-						)}
-						{otherUrl && (
-							<a
-								href={otherUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Live Project"
-								className="text-gray-800 dark:text-white text-lg sm:text-xl hover:text-blue-600 dark:hover:text-blue-400 transition"
-							>
-								<FaExternalLinkAlt />
-							</a>
-						)}
-					</div>
-				</div>
-
-				<div className="relative sm:w-1/2 lg:w-1/3 flex-shrink-0 py-4">
-					<Image
-						src={imageUrl}
-						alt={title}
-						quality={95}
-						className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105 group-hover:-rotate-2"
-					/>
-				</div>
-			</div>
-		</motion.div>
-	);
+      {selected && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onClick={() => setSelected(null)}
+        >
+          <motion.div
+            className="bg-gray-900 rounded-lg max-w-lg w-full p-6 relative"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-3 text-gray-400 hover:text-white text-2xl"
+              onClick={() => setSelected(null)}
+            >
+              &times;
+            </button>
+            <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
+            <Image
+              src={selected.imageUrl}
+              alt={selected.title}
+              className="w-full h-48 object-cover rounded mb-4"
+              quality={95}
+            />
+            <p className="text-gray-300 mb-4 whitespace-pre-line">{selected.description}</p>
+            <ul className="flex flex-wrap gap-2 mb-4">
+              {selected.tags.map((tag, idx) => (
+                <li key={idx} className="px-2 py-1 text-xs bg-gray-700 rounded-full text-gray-200">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+            <div className="flex gap-4 text-lg">
+              {selected.gitHubUrl && (
+                <a
+                  href={selected.gitHubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-blue-400"
+                >
+                  <FaGithub />
+                </a>
+              )}
+              {selected.otherUrl && (
+                <a
+                  href={selected.otherUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-blue-400"
+                >
+                  <FaExternalLinkAlt />
+                </a>
+              )}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </motion.section>
+  );
 }

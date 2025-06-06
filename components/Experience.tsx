@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { BsCheckCircle } from "react-icons/bs";
 import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -56,11 +57,16 @@ export default function Experience() {
 							<p className="text-sm text-gray-500">{item.date}</p>
 						</div>
 
-						<div className="mt-4 text-left text-gray-700 dark:text-gray-300 space-y-3">
-							{item.description.split("\n").map((line, lineIndex) => (
-								<p key={lineIndex}>{line}</p>
-							))}
-						</div>
+                                                <div className="mt-4 text-left text-gray-300 space-y-2">
+                                                        <ul className="space-y-2">
+                                                                {item.description.split("\n").map((line, lineIndex) => (
+                                                                        <li key={lineIndex} className="flex gap-2">
+                                                                                <BsCheckCircle className="text-green-500 mt-1" />
+                                                                                <span>{line}</span>
+                                                                        </li>
+                                                                ))}
+                                                        </ul>
+                                                </div>
 
 						{/* Hover Effect */}
 						<div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-b from-transparent to-black/50 rounded-lg transition-opacity"></div>
