@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import PatternedImage from "./PatternedImage";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -15,6 +15,9 @@ type ProjectProps = {
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
   const [selected, setSelected] = useState<ProjectProps | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 5);
 
   return (
     <motion.section
@@ -26,8 +29,8 @@ export default function Projects() {
       id="projects"
     >
       <SectionHeading>My Projects</SectionHeading>
-      <div className="grid gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-3">
-        {projectsData.map((project, index) => (
+      <div className="grid gap-6 mt-8 grid-cols-1">
+        {displayedProjects.map((project, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
@@ -37,12 +40,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              className="h-40 w-full object-cover group-hover:opacity-90"
-              quality={95}
-            />
+            <PatternedImage src={project.imageUrl} alt={project.title} />
             <div className="p-4 text-left">
               <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
               <p className="text-base text-gray-200 mb-2 overflow-hidden max-h-16">{project.description}</p>
@@ -57,6 +55,15 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {projectsData.length > 5 && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="mt-4 text-sm text-blue-400 hover:underline"
+        >
+          {showAll ? "Show Less" : "See More"}
+        </button>
+      )}
 
       {selected && (
         <motion.div
@@ -78,12 +85,7 @@ export default function Projects() {
               &times;
             </button>
             <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
-            <Image
-              src={selected.imageUrl}
-              alt={selected.title}
-              className="w-full h-48 object-cover rounded mb-4"
-              quality={95}
-            />
+            <PatternedImage src={selected.imageUrl} alt={selected.title} heightClass="h-60" />
             <p className="text-base text-gray-200 mb-4 whitespace-pre-line">{selected.description}</p>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
