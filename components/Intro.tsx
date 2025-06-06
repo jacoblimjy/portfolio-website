@@ -62,8 +62,8 @@ export default function Intro() {
 				</div>
 			</div>
 
-			<motion.h1
-				className="text-2xl sm:text-4xl lg:text-5xl font-medium mb-6 px-4"
+                        <motion.h1
+                                className="text-3xl sm:text-4xl lg:text-5xl font-medium mb-6 px-4"
 				initial={{ opacity: 0, y: 100 }}
 				animate={{ opacity: 1, y: 0 }}
 			>
@@ -91,7 +91,7 @@ export default function Intro() {
 			>
 				<Link
 					href="#contact"
-					className="group bg-gray-900 text-white px-6 py-2 text-sm sm:text-base rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+                                        className="group bg-gray-900 text-white px-6 py-2 text-base sm:text-lg rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
 					onClick={() => {
 						setActiveSection("Contact");
 						setTimeOfLastClick(Date.now());

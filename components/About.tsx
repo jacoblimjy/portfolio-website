@@ -18,11 +18,11 @@ export default function About() {
 			id="about"
 		>
 			<SectionHeading>About me</SectionHeading>
-			<p className="text-sm sm:text-base lg:text-lg mb-3">
+                        <p className="text-base sm:text-lg mb-3">
 				👋 I am Lim Jacob, an undergraduate studying in the National University
 				of Singapore (NUS) School of Computing.
 			</p>
-			<p className="text-sm sm:text-base lg:text-lg mb-3">
+                        <p className="text-base sm:text-lg mb-3">
 				My course of study is Business Analytics with a specialization in
 				Machine Learning. I am also taking a second major in Quantitative
 				Finance. My key interests are in the areas of {""}
@@ -31,7 +31,7 @@ export default function About() {
 				</span>
 			</p>
 
-			<p className="text-sm sm:text-base lg:text-lg mb-3">
+                        <p className="text-base sm:text-lg mb-3">
 				I am a highly motivated individual who is always eager to learn new
 				things and take on new challenges. I am also a strong believer in the
 				importance of teamwork and collaboration. I am always looking for
@@ -40,7 +40,7 @@ export default function About() {
 			</p>
 
 			<p>
-				<span className="text-sm sm:text-base lg:text-lg underline">
+                                <span className="text-base sm:text-lg underline">
 					I am currently looking for full-time internship opportunities!
 				</span>
 			</p>
