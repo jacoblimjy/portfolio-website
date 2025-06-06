@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt, FaImage } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import PatternedImage from "./PatternedImage";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -40,26 +40,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            {project.imageUrl ? (
-              <div className="relative w-full h-48 bg-gray-200 overflow-hidden flex items-center justify-center">
-                <div
-                  className="absolute inset-0 scale-110 blur-md"
-                  style={{ backgroundImage: `url(${project.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src={project.imageUrl}
-                  alt={project.title}
-                  fill
-                  className="object-contain relative z-10"
-                  quality={95}
-                />
-              </div>
-            ) : (
-              <div className="flex items-center justify-center w-full h-48 bg-gray-200">
-                <FaImage className="w-12 h-12 text-gray-400" />
-              </div>
-            )}
+            <PatternedImage src={project.imageUrl} alt={project.title} />
             <div className="p-4 text-left">
               <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
               <p className="text-base text-gray-200 mb-2 overflow-hidden max-h-16">{project.description}</p>
@@ -104,26 +85,7 @@ export default function Projects() {
               &times;
             </button>
             <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
-            {selected.imageUrl ? (
-              <div className="relative w-full h-60 bg-gray-200 rounded mb-4 overflow-hidden flex items-center justify-center">
-                <div
-                  className="absolute inset-0 scale-110 blur-md"
-                  style={{ backgroundImage: `url(${selected.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src={selected.imageUrl}
-                  alt={selected.title}
-                  fill
-                  className="object-contain relative z-10"
-                  quality={95}
-                />
-              </div>
-            ) : (
-              <div className="flex items-center justify-center w-full h-60 bg-gray-200 rounded mb-4">
-                <FaImage className="w-12 h-12 text-gray-400" />
-              </div>
-            )}
+            <PatternedImage src={selected.imageUrl} alt={selected.title} heightClass="h-60" />
             <p className="text-base text-gray-200 mb-4 whitespace-pre-line">{selected.description}</p>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
