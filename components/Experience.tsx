@@ -26,7 +26,7 @@ export default function Experience() {
                                 {experiencesData.map((item, index) => (
                                         <motion.div
                                                 key={index}
-                                                className="group relative flex flex-col bg-white/10 border border-white/20 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
+                                                className="group relative flex flex-col bg-white/20 border border-white/30 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
                                                 initial={{ opacity: 0, y: 50 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
@@ -48,8 +48,8 @@ export default function Experience() {
 							<h4 className="text-md sm:text-lg font-medium text-gray-600 dark:text-gray-300 italic">
 								{item.title}
 							</h4>
-							<p className="text-sm text-gray-500">{item.location}</p>
-							<p className="text-sm text-gray-500">{item.date}</p>
+							<p className="text-sm text-gray-400">{item.location}</p>
+							<p className="text-sm text-gray-400">{item.date}</p>
 						</div>
 
                                                 <div className="mt-4 text-left text-gray-200 space-y-2">

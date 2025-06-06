@@ -31,7 +31,7 @@ export default function Projects() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
-            className="cursor-pointer bg-white/10 border border-white/20 backdrop-blur-md rounded-xl shadow-xl overflow-hidden group transition-transform hover:-translate-y-2"
+            className="cursor-pointer bg-white/20 border border-white/30 backdrop-blur-md rounded-xl shadow-xl overflow-hidden group transition-transform hover:-translate-y-2"
             onClick={() => setSelected(project)}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export default function Projects() {
             />
             <div className="p-4 text-left">
               <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-300 mb-2 overflow-hidden max-h-16">{project.description}</p>
+              <p className="text-sm text-gray-200 mb-2 overflow-hidden max-h-16">{project.description}</p>
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag, idx) => (
                   <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
@@ -84,7 +84,7 @@ export default function Projects() {
               className="w-full h-48 object-cover rounded mb-4"
               quality={95}
             />
-            <p className="text-gray-300 mb-4 whitespace-pre-line">{selected.description}</p>
+            <p className="text-gray-200 mb-4 whitespace-pre-line">{selected.description}</p>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
                 <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
