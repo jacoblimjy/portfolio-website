@@ -27,7 +27,7 @@ export default function RootLayout({
 			</head>
 
                         <body
-                                className="relative text-gray-50 font-sans"
+                                className="relative text-gray-100 font-sans text-base sm:text-lg leading-relaxed"
                         >
                                 {/* Background image */}
                                 <div
@@ -38,7 +38,7 @@ export default function RootLayout({
                                         }}
                                 />
                                 {/* Dark overlay for readability */}
-                                <div className="fixed inset-0 -z-20 bg-black/60" />
+                                <div className="fixed inset-0 -z-20 bg-black/75" />
 
                                 <ThemeContextProvider>
                                         <ActiveSectionContextProvider>
