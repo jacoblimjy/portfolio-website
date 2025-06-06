@@ -1,53 +1,11 @@
-// import "./globals.css";
-// import { Inter } from "next/font/google";
-// import Header from "@/components/Header";
-// import ActiveSectionContextProvider from "@/context/active-section-context";
-// import ThemeContextProvider from "@/context/theme-context";
-// import Footer from "@/components/Footer";
-// import ThemeSwitch from "@/components/ThemeSwitch";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "Jacob's Portfolio",
-//   description: "Portfolio showcasing projects, skills, and experience.",
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en" className="!scroll-smooth">
-//       <ThemeContextProvider>
-//         <body
-//           className={`${inter.className} bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-50 relative`}
-//         >
-//           <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-//           <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
-//           <ActiveSectionContextProvider>
-//             <Header />
-//             <div className="relative z-10 px-4 md:px-8">{children}</div>
-//             <Footer />
-//             <ThemeSwitch />
-//           </ActiveSectionContextProvider>
-//         </body>
-//       </ThemeContextProvider>
-//     </html>
-//   );
-// }
 
 import "./globals.css";
-import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 import Footer from "@/components/Footer";
-import ThemeSwitch from "@/components/ThemeSwitch";
 
-
-const inter = Inter({ subsets: ["latin"] });
+// Use system fonts to avoid network fetch failures during build
 
 export const metadata = {
 	title: "Jacob's Portfolio",
@@ -68,21 +26,28 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 			</head>
 
-			<body
-				className={`${inter.className} bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-50 relative`}
-			>
-				<div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-				<div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+                        <body
+                                className="relative text-gray-50 font-sans"
+                        >
+                                {/* Background image */}
+                                <div
+                                        className="fixed inset-0 -z-30 bg-center bg-cover bg-no-repeat"
+                                        style={{
+                                                backgroundImage:
+                                                        "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80')",
+                                        }}
+                                />
+                                {/* Dark overlay for readability */}
+                                <div className="fixed inset-0 -z-20 bg-black/80" />
 
-				<ThemeContextProvider>
-					<ActiveSectionContextProvider>
-						<Header />
-						{children}
-						<Footer />
-						<ThemeSwitch />
-					</ActiveSectionContextProvider>
-				</ThemeContextProvider>
-			</body>
+                                <ThemeContextProvider>
+                                        <ActiveSectionContextProvider>
+                                                <Header />
+                                                {children}
+                                                <Footer />
+                                        </ActiveSectionContextProvider>
+                                </ThemeContextProvider>
+                        </body>
 		</html>
 	);
 }
