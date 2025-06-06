@@ -15,6 +15,9 @@ type ProjectProps = {
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
   const [selected, setSelected] = useState<ProjectProps | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 5);
 
   return (
     <motion.section
@@ -26,8 +29,8 @@ export default function Projects() {
       id="projects"
     >
       <SectionHeading>My Projects</SectionHeading>
-      <div className="grid gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-3">
-        {projectsData.map((project, index) => (
+      <div className="grid gap-6 mt-8 grid-cols-1">
+        {displayedProjects.map((project, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
@@ -57,6 +60,15 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {projectsData.length > 5 && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="mt-4 text-sm text-blue-400 hover:underline"
+        >
+          {showAll ? "Show Less" : "See More"}
+        </button>
+      )}
 
       {selected && (
         <motion.div
