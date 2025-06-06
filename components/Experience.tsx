@@ -6,6 +6,11 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 export default function Experience() {
 	const { ref } = useSectionInView("Experience");
@@ -20,53 +25,38 @@ export default function Experience() {
 			transition={{ delay: 0.175 }}
 			id="experience"
 		>
-			<SectionHeading>My Experience</SectionHeading>
-			<div className="grid grid-cols-1 gap-8">
-				{experiencesData.map((item, index) => (
-					<motion.div
-						key={index}
-						className={`group relative flex flex-col bg-gradient-to-r ${
-							theme === "light"
-								? "from-gray-100 to-white"
-								: "from-gray-800 to-gray-900"
-						} p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105`}
-						initial={{ opacity: 0, y: 50 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: index * 0.1 }}
-					>
-						{/* Icon Badge */}
-						<div
-							className={`absolute -top-5 right-5 flex items-center justify-center w-12 h-12 rounded-full shadow-md ${
-								theme === "light" ? "bg-gray-200" : "bg-gray-700"
-							}`}
-						>
-							<div className="text-xl text-gray-800 dark:text-white">
-								{item.icon}
-							</div>
-						</div>
-
-						<div className="text-left">
-							<h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">
-								{item.company}
-							</h3>
-							<h4 className="text-md sm:text-lg font-medium text-gray-600 dark:text-gray-300 italic">
-								{item.title}
-							</h4>
-							<p className="text-sm text-gray-500">{item.location}</p>
-							<p className="text-sm text-gray-500">{item.date}</p>
-						</div>
-
-						<div className="mt-4 text-left text-gray-700 dark:text-gray-300 space-y-3">
-							{item.description.split("\n").map((line, lineIndex) => (
-								<p key={lineIndex}>{line}</p>
-							))}
-						</div>
-
-						{/* Hover Effect */}
-						<div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-b from-transparent to-black/50 rounded-lg transition-opacity"></div>
-					</motion.div>
-				))}
-			</div>
+                        <SectionHeading>My Experience</SectionHeading>
+                        <VerticalTimeline lineColor={theme === "light" ? "#e5e7eb" : "#374151"}>
+                                {experiencesData.map((item, index) => (
+                                        <VerticalTimelineElement
+                                                key={index}
+                                                visible={true}
+                                                contentStyle={{
+                                                        background: theme === "light" ? "#f5f5f5" : "#1f2937",
+                                                        color: theme === "light" ? "#1f2937" : "#f5f5f5",
+                                                }}
+                                                contentArrowStyle={{
+                                                        borderRight: `7px solid ${theme === "light" ? "#f5f5f5" : "#1f2937"}`,
+                                                }}
+                                                date={item.date}
+                                                iconStyle={{
+                                                        background: theme === "light" ? "#fff" : "#374151",
+                                                        color: theme === "light" ? "#374151" : "#fff",
+                                                }}
+                                                icon={item.icon}
+                                        >
+                                                <h3 className="text-lg font-semibold">{item.company}</h3>
+                                                <h4 className="text-md italic text-gray-600 dark:text-gray-300">
+                                                        {item.title} - {item.location}
+                                                </h4>
+                                                <div className="mt-2 space-y-2 text-gray-700 dark:text-gray-300">
+                                                        {item.description.split("\n").map((line, lineIndex) => (
+                                                                <p key={lineIndex}>{line}</p>
+                                                        ))}
+                                                </div>
+                                        </VerticalTimelineElement>
+                                ))}
+                        </VerticalTimeline>
 		</motion.section>
 	);
 }

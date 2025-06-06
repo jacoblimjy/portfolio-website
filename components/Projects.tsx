@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
@@ -15,23 +15,37 @@ type ProjectProps = {
 };
 
 export default function Projects() {
-	const { ref } = useSectionInView("Projects", 0.5);
+        const { ref } = useSectionInView("Projects", 0.5);
+        const [query, setQuery] = useState("");
 
-	return (
-		<motion.section
-			ref={ref}
-			className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[60rem] px-4 sm:px-8 text-center text-justify"
+        const filteredProjects = projectsData.filter(
+                (project) =>
+                        project.title.toLowerCase().includes(query.toLowerCase()) ||
+                        project.tags.some((tag) => tag.toLowerCase().includes(query.toLowerCase()))
+        );
+
+        return (
+                <motion.section
+                        ref={ref}
+                        className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[60rem] px-4 sm:px-8 text-center text-justify"
 			initial={{ opacity: 0, y: 100 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.175 }}
 			id="projects"
 		>
-			<SectionHeading>My Projects</SectionHeading>
-			<div className="grid gap-8 mt-8">
-				{projectsData.map((project, index) => (
-					<Project key={index} {...project} />
-				))}
-			</div>
+                        <SectionHeading>My Projects</SectionHeading>
+                        <input
+                                type="text"
+                                placeholder="Search projects..."
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                className="mt-6 w-full sm:w-1/2 px-4 py-2 border rounded-md dark:bg-gray-800"
+                        />
+                        <div className="grid gap-8 mt-8">
+                                {filteredProjects.map((project, index) => (
+                                        <Project key={index} {...project} />
+                                ))}
+                        </div>
 		</motion.section>
 	);
 }
