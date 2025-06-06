@@ -23,29 +23,23 @@ export default function Experience() {
 		>
 			<SectionHeading>My Experience</SectionHeading>
 			<div className="grid grid-cols-1 gap-8">
-				{experiencesData.map((item, index) => (
+                                {experiencesData.map((item, index) => (
                                         <motion.div
                                                 key={index}
-                                                className={`group relative flex flex-col bg-gradient-to-r ${
-                                                        theme === "light"
-                                                                ? "from-gray-100 to-white"
-                                                                : "from-gray-800 to-gray-900"
-                                                } p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105`}
+                                                className="group relative flex flex-col bg-white/10 border border-white/20 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
                                                 initial={{ opacity: 0, y: 50 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: index * 0.1 }}
                                         >
 						{/* Icon Badge */}
-						<div
-							className={`absolute -top-5 right-5 flex items-center justify-center w-12 h-12 rounded-full shadow-md ${
-								theme === "light" ? "bg-gray-200" : "bg-gray-700"
-							}`}
-						>
-							<div className="text-xl text-gray-800 dark:text-white">
-								{item.icon}
-							</div>
-						</div>
+                                                <div
+                                                        className="absolute -top-5 right-5 flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-md shadow-md"
+                                                >
+                                                        <div className="text-xl text-white">
+                                                                {item.icon}
+                                                        </div>
+                                                </div>
 
 						<div className="text-left">
 							<h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">
@@ -58,11 +52,11 @@ export default function Experience() {
 							<p className="text-sm text-gray-500">{item.date}</p>
 						</div>
 
-                                                <div className="mt-4 text-left text-gray-300 space-y-2">
+                                                <div className="mt-4 text-left text-gray-200 space-y-2">
                                                         <ul className="space-y-2">
                                                                 {item.description.split("\n").map((line, lineIndex) => (
                                                                         <li key={lineIndex} className="flex items-start gap-2 text-sm">
-                                                                                <BsCheckCircle className="text-green-500 w-4 h-4 mt-[2px] flex-shrink-0" />
+                                                                                <BsCheckCircle className="text-green-400 w-4 h-4 mt-[2px] flex-shrink-0" />
                                                                                 <span>{line}</span>
                                                                         </li>
                                                                 ))}

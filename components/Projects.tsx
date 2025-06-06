@@ -30,8 +30,8 @@ export default function Projects() {
         {projectsData.map((project, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.03 }}
-            className="cursor-pointer bg-gray-800 rounded-lg shadow-lg overflow-hidden group"
+            whileHover={{ scale: 1.05 }}
+            className="cursor-pointer bg-white/10 border border-white/20 backdrop-blur-md rounded-xl shadow-xl overflow-hidden group transition-transform hover:-translate-y-2"
             onClick={() => setSelected(project)}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function Projects() {
               <p className="text-sm text-gray-300 mb-2 overflow-hidden max-h-16">{project.description}</p>
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag, idx) => (
-                  <li key={idx} className="px-2 py-1 text-xs bg-gray-700 rounded-full text-gray-200">
+                  <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
                     {tag}
                   </li>
                 ))}
@@ -65,8 +65,8 @@ export default function Projects() {
           animate={{ opacity: 1 }}
           onClick={() => setSelected(null)}
         >
-          <motion.div
-            className="bg-gray-900 rounded-lg max-w-lg w-full p-6 relative"
+        <motion.div
+          className="bg-gray-900/90 backdrop-blur-lg border border-white/20 rounded-xl max-w-lg w-full p-6 relative"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             onClick={(e) => e.stopPropagation()}
@@ -87,7 +87,7 @@ export default function Projects() {
             <p className="text-gray-300 mb-4 whitespace-pre-line">{selected.description}</p>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
-                <li key={idx} className="px-2 py-1 text-xs bg-gray-700 rounded-full text-gray-200">
+                <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
                   {tag}
                 </li>
               ))}
