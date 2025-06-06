@@ -5,26 +5,8 @@ import { motion } from "framer-motion";
 import { links } from "../lib/data";
 import Link from "next/link";
 import clsx from "clsx";
-import {
-  FiHome,
-  FiUser,
-  FiBriefcase,
-  FiFolder,
-  FiCode,
-  FiMail,
-} from "react-icons/fi";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import type { SectionName } from "@/lib/types";
 import { useGlobalScrollSpy } from "../lib/hooks";
-
-const iconMap: Record<SectionName, React.ReactNode> = {
-  Home: <FiHome />,
-  About: <FiUser />,
-  Experience: <FiBriefcase />,
-  Projects: <FiFolder />,
-  Skills: <FiCode />,
-  Contact: <FiMail />,
-};
 
 export default function Header() {
 	// 👇 kick off the scroll‑spy
@@ -37,12 +19,12 @@ export default function Header() {
 	return (
                 <header className="z-[999] relative">
                         <motion.div
-                                className="hidden sm:block fixed top-0 left-1/2 h-[6rem] w-full rounded-none border border-white border-opacity-40 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-opacity-80 shadow-lg shadow-black/[0.05] backdrop-blur-[0.5rem] sm:top-6 sm:h-[5rem] sm:w-[50rem] sm:rounded-full dark:border-black/40"
+                                className="hidden sm:block fixed top-0 left-1/2 h-[6rem] w-full rounded-none border border-white/30 bg-white/10 backdrop-blur-md shadow-lg shadow-black/[0.05] sm:top-6 sm:h-[5rem] sm:w-[50rem] sm:rounded-full dark:border-white/20 dark:bg-gray-900/40"
                                 initial={{ y: -100, x: "-50%", opacity: 0 }}
                                 animate={{ y: 0, x: "-50%", opacity: 1 }}
                         />
-			<nav className="flex fixed top-[0.3rem] left-1/2 h-14 -translate-x-1/2 py-3 sm:top-[2rem] sm:h-[initial] sm:py-2">
-				<ul className="flex w-[24rem] flex-wrap items-center justify-center gap-y-2 text-[0.9rem] sm:text-[1rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-6">
+                        <nav className="flex fixed top-[0.3rem] left-1/2 h-14 -translate-x-1/2 py-3 sm:top-[2rem] sm:h-[initial] sm:py-2">
+                                <ul className="flex w-[24rem] flex-wrap items-center justify-center gap-y-2 text-[0.9rem] sm:text-[1rem] font-medium text-gray-200 sm:w-[initial] sm:flex-nowrap sm:gap-6">
 					{links.map((link) => (
 						<motion.li
 							key={link.hash}
@@ -57,22 +39,17 @@ export default function Header() {
 									setTimeOfLastClick(Date.now());
 								}}
                                                                 className={clsx(
-                                                                        "flex w-full items-center justify-center px-4 py-3 hover:text-white transition-colors duration-200 dark:text-gray-400 dark:hover:text-white",
+                                                                        "flex w-full items-center justify-center px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200",
                                                                         {
                                                                                 "text-white": activeSection === link.name,
                                                                         }
                                                                 )}
 							>
-                                                                <span className="flex items-center gap-1">
-                                                                        <span className="text-lg hidden sm:block">
-                                                                                {iconMap[link.name]}
-                                                                        </span>
-                                                                        {link.name}
-                                                                </span>
+                                                                {link.name}
                                                                 {activeSection === link.name && (
                                                                         <motion.span
                                                                                 layoutId="activeSection"
-                                                                                className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+                                                                                className="absolute inset-0 -z-10 rounded-full bg-white/25 dark:bg-gray-700/50"
                                                                                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                                                         />
                                                                 )}
