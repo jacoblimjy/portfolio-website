@@ -41,12 +41,20 @@ export default function Projects() {
             viewport={{ once: true }}
           >
             {project.imageUrl ? (
-              <Image
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-full h-48 object-contain bg-gray-200"
-                quality={95}
-              />
+              <div className="relative w-full h-48 bg-gray-200 overflow-hidden flex items-center justify-center">
+                <div
+                  className="absolute inset-0 scale-110 blur-md"
+                  style={{ backgroundImage: `url(${project.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  aria-hidden="true"
+                />
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  fill
+                  className="object-contain relative z-10"
+                  quality={95}
+                />
+              </div>
             ) : (
               <div className="flex items-center justify-center w-full h-48 bg-gray-200">
                 <FaImage className="w-12 h-12 text-gray-400" />
@@ -97,12 +105,20 @@ export default function Projects() {
             </button>
             <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
             {selected.imageUrl ? (
-              <Image
-                src={selected.imageUrl}
-                alt={selected.title}
-                className="w-full h-60 object-contain bg-gray-200 rounded mb-4"
-                quality={95}
-              />
+              <div className="relative w-full h-60 bg-gray-200 rounded mb-4 overflow-hidden flex items-center justify-center">
+                <div
+                  className="absolute inset-0 scale-110 blur-md"
+                  style={{ backgroundImage: `url(${selected.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  aria-hidden="true"
+                />
+                <Image
+                  src={selected.imageUrl}
+                  alt={selected.title}
+                  fill
+                  className="object-contain relative z-10"
+                  quality={95}
+                />
+              </div>
             ) : (
               <div className="flex items-center justify-center w-full h-60 bg-gray-200 rounded mb-4">
                 <FaImage className="w-12 h-12 text-gray-400" />
