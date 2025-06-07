@@ -102,21 +102,21 @@ export default function Intro() {
 
                                 <div className="flex items-center gap-4">
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 active:scale-105"
+                                                className="w-10 h-10 flex items-center justify-center bg-black/50 border border-black/70 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/70 active:scale-105"
                                                 href="https://www.linkedin.com/in/jacoblim5/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                         >
-                                                <BsLinkedin size={24} />
+                                                <BsLinkedin className="w-6 h-6" />
                                         </a>
 
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 active:scale-105"
+                                                className="w-10 h-10 flex items-center justify-center bg-black/50 border border-black/70 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/70 active:scale-105"
                                                 href="https://github.com/jacoblimjy"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                         >
-                                                <FaGithubSquare size={24} />
+                                                <FaGithubSquare className="w-6 h-6" />
                                         </a>
                                 </div>
 			</motion.div>
