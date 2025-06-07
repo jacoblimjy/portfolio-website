@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 import Footer from "@/components/Footer";
+import Starfield from "@/components/Starfield";
 
 // Use system fonts to avoid network fetch failures during build
 
@@ -30,16 +31,10 @@ export default function RootLayout({
                         <body
                                 className="relative text-gray-50 font-sans"
                         >
-                                {/* Background image */}
-                                <div
-                                        className="fixed inset-0 -z-30 bg-center bg-cover bg-no-repeat"
-                                        style={{
-                                                backgroundImage:
-                                                        "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80')",
-                                        }}
-                                />
+                                {/* Animated starfield background */}
+                                <Starfield />
                                 {/* Dark overlay for readability */}
-                                <div className="fixed inset-0 -z-20 bg-black/80" />
+                                <div className="fixed inset-0 -z-30 bg-gradient-to-b from-black/60 via-black/80 to-black" />
 
                                 <ThemeContextProvider>
                                         <ActiveSectionContextProvider>
