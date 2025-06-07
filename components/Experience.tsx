@@ -63,11 +63,11 @@ export default function Experience() {
                                                         </ul>
                                                 </div>
 
-						{/* Hover Effect */}
-						<div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-b from-transparent to-black/50 rounded-lg transition-opacity"></div>
-					</motion.div>
-				))}
-			</div>
+                                                {/* Hover Effect */}
+                                                <div className="absolute inset-0 rounded-lg bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all"></div>
+                                        </motion.div>
+                                ))}
+                        </div>
 		</motion.section>
 	);
 }
