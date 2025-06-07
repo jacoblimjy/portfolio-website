@@ -42,7 +42,7 @@ export default function Contact() {
     <motion.section
       ref={ref}
       id="contact"
-      className="flex items-center justify-center h-screen text-center"
+      className="flex items-center justify-center min-h-screen text-center px-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -52,7 +52,7 @@ export default function Contact() {
         {/* This div will wrap your content and ensure it doesn't stretch too wide */}
         <SectionHeading>Get in touch</SectionHeading>
         <p className="mb-8">Feel free to reach out to me!</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-10">
           <motion.a
             href="https://www.linkedin.com/in/jacoblim5/"
             target="_blank"

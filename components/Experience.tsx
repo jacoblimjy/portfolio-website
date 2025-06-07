@@ -22,11 +22,11 @@ export default function Experience() {
 			id="experience"
 		>
 			<SectionHeading>My Experience</SectionHeading>
-			<div className="grid grid-cols-1 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                 {experiencesData.map((item, index) => (
                                         <motion.div
                                                 key={index}
-                                                className="group relative flex flex-col bg-white/20 border border-white/30 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
+                                                className="group relative flex flex-col bg-white/20 border border-white/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
                                                 initial={{ opacity: 0, y: 50 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
