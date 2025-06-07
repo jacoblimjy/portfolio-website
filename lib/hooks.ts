@@ -54,31 +54,36 @@ export function useSectionInView(sectionName: SectionName, threshold = 0) {
 }
 
 export function useGlobalScrollSpy(
-	// <-- allow readonly arrays
-	sections: readonly SectionLink[]
+        // <-- allow readonly arrays
+        sections: readonly SectionLink[]
 ) {
-	const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+        const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
-	useEffect(() => {
-		const handler = () => {
-			if (Date.now() - timeOfLastClick < 1000) return;
-			const midY = window.innerHeight / 2;
-			let best: SectionLink | null = null;
-			let bestDist = Infinity;
+        useEffect(() => {
+                const handler = () => {
+                        if (Date.now() - timeOfLastClick < 1000) return;
+                        const midY = window.innerHeight / 2;
+                        let best: SectionLink | null = null;
+                        let bestDist = Infinity;
 
-			for (const sec of sections) {
-				const id = sec.hash.slice(1);
-				const el = document.getElementById(id);
-				if (!el) continue;
-				const dist = Math.abs(el.getBoundingClientRect().top - midY);
-				if (dist < bestDist) {
-					bestDist = dist;
-					best = sec;
-				}
-			}
+                        for (const sec of sections) {
+                                const id = sec.hash.slice(1);
+                                const el = document.getElementById(id);
+                                if (!el) continue;
+                                const rect = el.getBoundingClientRect();
+                                if (rect.top <= midY && rect.bottom >= midY) {
+                                        best = sec;
+                                        break;
+                                }
+                                const dist = Math.abs(rect.top - midY);
+                                if (dist < bestDist) {
+                                        bestDist = dist;
+                                        best = sec;
+                                }
+                        }
 
-			if (best) setActiveSection(best.name);
-		};
+                        if (best) setActiveSection(best.name);
+                };
 
 		window.addEventListener("scroll", handler, { passive: true });
 		handler();
