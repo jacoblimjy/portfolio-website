@@ -11,6 +11,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useState, useEffect } from "react";
 // import meImg from "@/public/meImg.jpg";
 import ReactRotatingText from "react-rotating-text";
+import Tilt from "react-parallax-tilt";
 
 
 export default function Intro() {
@@ -61,11 +62,12 @@ export default function Intro() {
 				</div>
 			</div>
 
+                        <Tilt perspective={1000} glareEnable={true} glareMaxOpacity={0.2}>
                         <motion.h1
                                 className="text-3xl sm:text-4xl lg:text-5xl font-medium mb-6 px-4"
-				initial={{ opacity: 0, y: 100 }}
-				animate={{ opacity: 1, y: 0 }}
-			>
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0 }}
+                        >
 				<div className="text-center mb-2 sm:mb-4 lg:mb-6">
 					<span className="font-bold">Hello, I am Jacob!</span>
 				</div>
@@ -78,7 +80,8 @@ export default function Intro() {
 					emptyPause={1000}
 					cursor={true}
 				/>
-			</motion.h1>
+                        </motion.h1>
+                        </Tilt>
 
                         <motion.div
                                 className="flex flex-row items-center justify-center gap-2 sm:gap-6 text-lg font-medium mb-6"
