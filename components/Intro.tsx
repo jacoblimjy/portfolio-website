@@ -81,7 +81,7 @@ export default function Intro() {
 			</motion.h1>
 
                         <motion.div
-                                className="flex flex-row items-center justify-center gap-3 sm:gap-6 text-lg font-medium mb-6"
+                                className="flex flex-row items-center justify-center gap-2 sm:gap-6 text-lg font-medium mb-6"
                                 initial={{ opacity: 0, y: 100 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{
@@ -90,7 +90,7 @@ export default function Intro() {
                         >
                                 <Link
                                         href="#contact"
-                                        className="group px-6 py-3 sm:py-2 text-base sm:text-lg w-auto text-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow outline-none focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105 transition"
+                                        className="group px-4 sm:px-6 py-2 text-base sm:text-lg w-auto text-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow outline-none focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105 transition"
                                         onClick={() => {
                                                 setActiveSection("Contact");
                                                 setTimeOfLastClick(Date.now());
@@ -99,9 +99,9 @@ export default function Intro() {
                                         Contact me here
                                 </Link>
 
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-3 sm:gap-4">
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105"
+                                                className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105"
                                                 href="https://www.linkedin.com/in/jacoblim5/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -110,7 +110,7 @@ export default function Intro() {
                                         </a>
 
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105"
+                                                className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105"
                                                 href="https://github.com/jacoblimjy"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
