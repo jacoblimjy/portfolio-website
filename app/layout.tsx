@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 import Footer from "@/components/Footer";
+import StarryBackground from "@/components/StarryBackground";
 
 // Use system fonts to avoid network fetch failures during build
 
@@ -39,7 +40,10 @@ export default function RootLayout({
                                         }}
                                 />
                                 {/* Dark overlay for readability */}
-                                <div className="fixed inset-0 -z-20 bg-black/80" />
+                                <div className="fixed inset-0 -z-20 bg-black/70" />
+
+                                {/* Animated star background */}
+                                <StarryBackground />
 
                                 <ThemeContextProvider>
                                         <ActiveSectionContextProvider>
