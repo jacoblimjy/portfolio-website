@@ -15,18 +15,18 @@ export default function Experience() {
 	return (
 		<motion.section
 			ref={ref}
-			className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[90%] sm:max-w-[60rem] mx-auto text-center px-4 sm:px-8"
+                        className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[90%] sm:max-w-[70rem] mx-auto text-center px-4 sm:px-8"
 			initial={{ opacity: 0, y: 100 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.175 }}
 			id="experience"
 		>
 			<SectionHeading>My Experience</SectionHeading>
-			<div className="grid grid-cols-1 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                 {experiencesData.map((item, index) => (
                                         <motion.div
                                                 key={index}
-                                                className="group relative flex flex-col bg-white/20 border border-white/30 backdrop-blur-md p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
+                                                className="group relative flex flex-col bg-white/20 border border-white/30 backdrop-blur-md p-4 sm:p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-2"
                                                 initial={{ opacity: 0, y: 50 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
@@ -41,21 +41,21 @@ export default function Experience() {
                                                         </div>
                                                 </div>
 
-						<div className="text-left">
-                                                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-								{item.company}
-							</h3>
-                                                        <h4 className="text-base sm:text-lg font-medium text-gray-600 dark:text-gray-300 italic">
-								{item.title}
-							</h4>
-							<p className="text-sm text-gray-400">{item.location}</p>
-							<p className="text-sm text-gray-400">{item.date}</p>
+                                                <div className="text-left">
+                                                        <h3 className="text-xl font-semibold text-white mb-1">
+                                                                {item.company}
+                                                        </h3>
+                                                        <h4 className="text-base text-gray-200 mb-1">
+                                                                {item.title}
+                                                        </h4>
+                                                        <p className="text-sm text-gray-300">{item.location}</p>
+                                                        <p className="text-sm text-gray-300">{item.date}</p>
 						</div>
 
                                                 <div className="mt-4 text-left text-gray-200 space-y-2">
                                                         <ul className="space-y-2">
                                                                 {item.description.split("\n").map((line, lineIndex) => (
-                                                                        <li key={lineIndex} className="flex items-start gap-2 text-sm">
+                                                                        <li key={lineIndex} className="flex items-start gap-2 text-sm text-gray-200">
                                                                                 <BsCheckCircle className="text-green-400 w-4 h-4 mt-[2px] flex-shrink-0" />
                                                                                 <span>{line}</span>
                                                                         </li>
@@ -63,11 +63,11 @@ export default function Experience() {
                                                         </ul>
                                                 </div>
 
-						{/* Hover Effect */}
-						<div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-b from-transparent to-black/50 rounded-lg transition-opacity"></div>
-					</motion.div>
-				))}
-			</div>
+                                                {/* Hover Effect */}
+                                                <div className="absolute inset-0 rounded-lg bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all"></div>
+                                        </motion.div>
+                                ))}
+                        </div>
 		</motion.section>
 	);
 }

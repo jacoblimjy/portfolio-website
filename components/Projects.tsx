@@ -29,7 +29,7 @@ export default function Projects() {
       id="projects"
     >
       <SectionHeading>My Projects</SectionHeading>
-      <div className="grid gap-6 mt-8 grid-cols-1">
+      <div className="grid gap-6 mt-8 grid-cols-1 sm:grid-cols-2">
         {displayedProjects.map((project, index) => (
           <motion.div
             key={index}
@@ -59,7 +59,7 @@ export default function Projects() {
       {projectsData.length > 5 && (
         <button
           onClick={() => setShowAll(!showAll)}
-          className="mt-4 text-sm text-blue-400 hover:underline"
+          className="mt-4 px-4 py-2 text-sm text-white bg-white/20 border border-white/30 backdrop-blur-md rounded-full shadow hover:bg-white/30 transition"
         >
           {showAll ? "Show Less" : "See More"}
         </button>
