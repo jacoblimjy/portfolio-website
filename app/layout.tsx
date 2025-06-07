@@ -21,10 +21,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="!scroll-smooth">
-			<head>
-				<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-			</head>
+                <html lang="en" className="!scroll-smooth">
+                        <head>
+                                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                                <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+                        </head>
 
                         <body
                                 className="relative text-gray-50 font-sans"
