@@ -102,16 +102,16 @@ export default function Intro() {
 
                                 <div className="flex items-center gap-4">
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-black/40 border border-black/60 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/60 active:scale-105"
+                                                className="w-10 h-10 flex items-center justify-center bg-white/15 border border-white/25 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-white/25 active:scale-105"
                                                 href="https://www.linkedin.com/in/jacoblim5/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                         >
-                                                <BsLinkedin className="w-5 h-5" />
+                                                <BsLinkedin className="w-6 h-6" />
                                         </a>
 
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-black/40 border border-black/60 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/60 active:scale-105"
+                                                className="w-10 h-10 flex items-center justify-center bg-white/15 border border-white/25 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-white/25 active:scale-105"
                                                 href="https://github.com/jacoblimjy"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
