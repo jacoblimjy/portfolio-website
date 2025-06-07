@@ -15,7 +15,7 @@ export default function Experience() {
 	return (
 		<motion.section
 			ref={ref}
-			className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[90%] sm:max-w-[60rem] mx-auto text-center px-4 sm:px-8"
+                        className="scroll-mt-[4.5rem] sm:scroll-mt-[6rem] mb-12 max-w-[90%] sm:max-w-[70rem] mx-auto text-center px-4 sm:px-8"
 			initial={{ opacity: 0, y: 100 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.175 }}
@@ -41,21 +41,21 @@ export default function Experience() {
                                                         </div>
                                                 </div>
 
-						<div className="text-left">
-                                                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-								{item.company}
-							</h3>
-                                                        <h4 className="text-base sm:text-lg font-medium text-gray-600 dark:text-gray-300 italic">
-								{item.title}
-							</h4>
-							<p className="text-sm text-gray-400">{item.location}</p>
-							<p className="text-sm text-gray-400">{item.date}</p>
+                                                <div className="text-left">
+                                                        <h3 className="text-xl font-semibold text-white mb-1">
+                                                                {item.company}
+                                                        </h3>
+                                                        <h4 className="text-base text-gray-200 mb-1">
+                                                                {item.title}
+                                                        </h4>
+                                                        <p className="text-sm text-gray-300">{item.location}</p>
+                                                        <p className="text-sm text-gray-300">{item.date}</p>
 						</div>
 
                                                 <div className="mt-4 text-left text-gray-200 space-y-2">
                                                         <ul className="space-y-2">
                                                                 {item.description.split("\n").map((line, lineIndex) => (
-                                                                        <li key={lineIndex} className="flex items-start gap-2 text-sm">
+                                                                        <li key={lineIndex} className="flex items-start gap-2 text-sm text-gray-200">
                                                                                 <BsCheckCircle className="text-green-400 w-4 h-4 mt-[2px] flex-shrink-0" />
                                                                                 <span>{line}</span>
                                                                         </li>
