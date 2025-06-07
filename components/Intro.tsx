@@ -89,36 +89,36 @@ export default function Intro() {
 					delay: 0.1,
 				}}
 			>
-				<Link
-					href="#contact"
-                                        className="group bg-gray-900 text-white px-6 py-2 text-base sm:text-lg rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-					onClick={() => {
-						setActiveSection("Contact");
-						setTimeOfLastClick(Date.now());
-					}}
-				>
-					Contact me here
-				</Link>
+                                <Link
+                                        href="#contact"
+                                        className="group px-6 py-3 sm:py-2 text-base sm:text-lg w-full sm:w-auto text-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow outline-none focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105 transition"
+                                        onClick={() => {
+                                                setActiveSection("Contact");
+                                                setTimeOfLastClick(Date.now());
+                                        }}
+                                >
+                                        Contact me here
+                                </Link>
 
-				<div className="flex items-center gap-4">
-					<a
-						className="bg-white p-3 text-gray-700 hover:text-gray-950 rounded-full transition focus:scale-[1.1] hover:scale-[1.1] active:scale-105 dark:bg-gray-800 dark:text-white dark:hover:text-gray-300"
-						href="https://www.linkedin.com/in/jacoblim5/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BsLinkedin size={24} />
-					</a>
+                                <div className="flex items-center gap-4">
+                                        <a
+                                                className="w-10 h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 active:scale-105"
+                                                href="https://www.linkedin.com/in/jacoblim5/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                        >
+                                                <BsLinkedin size={24} />
+                                        </a>
 
-					<a
-						className="bg-white p-3 text-gray-700 hover:text-gray-950 rounded-full transition focus:scale-[1.1] hover:scale-[1.1] active:scale-105 dark:bg-gray-800 dark:text-white dark:hover:text-gray-300"
-						href="https://github.com/jacoblimjy"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaGithubSquare size={24} />
-					</a>
-				</div>
+                                        <a
+                                                className="w-10 h-10 flex items-center justify-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 active:scale-105"
+                                                href="https://github.com/jacoblimjy"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                        >
+                                                <FaGithubSquare size={24} />
+                                        </a>
+                                </div>
 			</motion.div>
 
 			{/* <motion.div
