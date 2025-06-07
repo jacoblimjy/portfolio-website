@@ -91,7 +91,7 @@ export default function Intro() {
 			>
                                 <Link
                                         href="#contact"
-                                        className="group px-6 py-3 sm:py-2 text-base sm:text-lg w-full sm:w-auto text-center bg-white/20 border border-white/30 backdrop-blur-md text-white rounded-full shadow outline-none focus:scale-110 hover:scale-110 hover:bg-white/30 active:scale-105 transition"
+                                        className="group px-6 py-3 sm:py-2 text-base sm:text-lg w-full sm:w-auto text-center bg-white/15 border border-white/25 backdrop-blur-md text-white rounded-full shadow outline-none focus:scale-110 hover:scale-110 hover:bg-white/25 active:scale-105 transition"
                                         onClick={() => {
                                                 setActiveSection("Contact");
                                                 setTimeOfLastClick(Date.now());
@@ -102,16 +102,16 @@ export default function Intro() {
 
                                 <div className="flex items-center gap-4">
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-black/50 border border-black/70 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/70 active:scale-105"
+                                                className="w-10 h-10 flex items-center justify-center bg-black/40 border border-black/60 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/60 active:scale-105"
                                                 href="https://www.linkedin.com/in/jacoblim5/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                         >
-                                                <BsLinkedin className="w-6 h-6" />
+                                                <BsLinkedin className="w-5 h-5" />
                                         </a>
 
                                         <a
-                                                className="w-10 h-10 flex items-center justify-center bg-black/50 border border-black/70 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/70 active:scale-105"
+                                                className="w-10 h-10 flex items-center justify-center bg-black/40 border border-black/60 backdrop-blur-md text-white rounded-full shadow transition focus:scale-110 hover:scale-110 hover:bg-black/60 active:scale-105"
                                                 href="https://github.com/jacoblimjy"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
