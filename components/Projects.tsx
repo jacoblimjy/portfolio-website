@@ -18,7 +18,7 @@ export default function Projects() {
   const [selected, setSelected] = useState<ProjectProps | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 5);
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 8);
 
   return (
     <motion.section
@@ -64,7 +64,7 @@ export default function Projects() {
         ))}
       </div>
 
-      {projectsData.length > 5 && (
+      {projectsData.length > 8 && (
         <button
           onClick={() => setShowAll(!showAll)}
           className="mt-4 px-4 py-2 text-sm text-white bg-white/20 border border-white/30 backdrop-blur-md rounded-full shadow hover:bg-white/30 transition"
