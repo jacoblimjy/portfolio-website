@@ -1,0 +1,50 @@
+[
+	{
+		"company": "TikTok",
+		"title": "Data Scientist Intern",
+		"location": "Singapore",
+		"description": "Analysing live-streaming data to define KPIs, build monitoring dashboards, conduct A/B tests, and perform whitebox diagnostics to inform product and recommendation system optimisation.",
+		"icon": "CgWorkAlt",
+		"date": "May 2025 - Present"
+	},
+	{
+		"company": "GovTech",
+		"title": "Data Scientist Intern",
+		"location": "Singapore",
+		"description": "Developed an AI-powered public sensing web application to systematically process and analyse data from social media, news outlets, and government platforms, delivering actionable insights into emerging trends and sentiment. \nImproved LLM analysis accuracy by 25% through QLoRA parameter‐efficient fine‐tuning and context‐optimized prompt engineering, then deployed the optimised model on AWS SageMaker.",
+		"icon": "CgWorkAlt",
+		"date": "Jan 2025 - May 2025"
+	},
+	{
+		"company": "NUS Computing",
+		"title": "Teaching Assistant",
+		"location": "Singapore",
+		"description": "Assisted in a course covering the software development life cycle, front-end development (HTML, CSS, JavaScript), JavaScript frameworks like Vue.js, Firebase Firestore, version control with Git, project management (SCRUM), and DevOps.\nSupported project-based learning, enabling students to develop and deploy full-stack web applications.\nFacilitated discussions on ethical considerations in data usage and privacy laws.\nConducted tutorials and provided feedbacks students' projects and assignments.",
+		"icon": "LuGraduationCap",
+		"date": "Jul 2023 - Present"
+	},
+	{
+		"company": "Income Insurance",
+		"title": "Machine Learning Engineer Intern",
+		"location": "Singapore",
+		"description": "Spearheaded the development and implementation of a cutting-edge Generative AI solution utilizing LlamaIndex and large language models, automating the extraction of critical features from highly complex and unstructured insurance policy documents. This automation reduced the review time by 95% and the features are subsequently integrated into downstream propensity models, enhancing predictive accuracy.\nEvaluated and optimized the Retrieval-Augmented Generation (RAG) agent to ensure high accuracy and efficiency.\nPresented findings and documentation to senior management, effectively communicating benefits and workflow improvements.",
+		"icon": "CgWorkAlt",
+		"date": "May 2024 - Aug 2024"
+	},
+	{
+		"company": "SariSuki",
+		"title": "Senior Analyst, NUS Business Analytics Consulting Team",
+		"location": "Singapore",
+		"description": "Collaborated with SariSuki to develop predictive models for agricultural product prices, utilizing advanced techniques such as ARIMA, SARIMAX, and LSTM to significantly improve forecasting accuracy.\nImportant findings and visualizations were presented to SariSuki Data Science team for actionable insights.",
+		"icon": "CgWorkAlt",
+		"date": "Oct 2023 - May 2024"
+	},
+	{
+		"company": "UOB Kay Hian",
+		"title": "Data Management Contract Officer",
+		"location": "Singapore",
+		"description": "Managed onboarding of UOBKH & Endowus individual accounts while ensuring conformity to AML/CFT/CDD requirements.\nUtilized standard document management tools to create comprehensive logs and maintain essential databases.\nProactively collaborated with Clients, Trading Representatives (TRs), Client Services, and Compliance to rectify discrepancies and aided in the modification of clients' trade rates when necessary.",
+		"icon": "CgWorkAlt",
+		"date": "Nov 2021 - May 2022"
+	}
+]

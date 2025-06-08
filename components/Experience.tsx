@@ -21,7 +21,7 @@ export default function Experience() {
 			transition={{ delay: 0.175 }}
 			id="experience"
 		>
-			<SectionHeading>My Experience</SectionHeading>
+			<SectionHeading>My Experiences</SectionHeading>
 			<div className="grid grid-cols-1 gap-8">
                                 {experiencesData.map((item, index) => (
                                         <motion.div

@@ -1,0 +1,87 @@
+[
+	{
+		"title": "HawkHub",
+    "description": "Built end-to-end full-stack web app using React, Django (+ Channels), PostgreSQL, Celery & Redis, and JWT authentication to streamline hawker management and reduce administrative burden.\nImplemented real-time StockTracker with WebSocket-powered inventory updates, low-stock & expiry alerts with customizable thresholds, and automatic ingredient deductions on sale events.\nDeveloped FinanceTracker to consolidate “Add Sales” and “Add Costs” workflows, driving monthly P&L reporting and seamless inventory reconciliation.\nCreated Multi-Vendor E-commerce Space enabling supplier product listings & reviews, hawker cart & checkout flows, order lifecycle management (status updates, delivery confirmations), and inventory sync on receipt.\nBuilt Community & Resources modules featuring a hawker guide and forum/helpline with CRUD operations and review policy enforcement.\nEnsured quality via comprehensive unit & integration testing (Postman, GUI), Git feature-branch workflow with pull requests, and documented architecture & CI/CD practices.",
+		"tags": [
+			"Django",
+			"React",
+			"Material UI",
+			"Redux",
+			"PostgreSQL",
+			"Redis",
+			"Postman"
+		],
+		"image": "hawkhub.png",
+		"gitHubUrl": "https://github.com/jacoblimjy/HawkHub-Software-Engineering-Project",
+		"otherUrl": "https://hawkhub.onrender.com/"
+	},
+	{
+		"title": "TravelPal",
+    "description": "Built and launched a responsive Vue.js single-page application on Firebase, delivering real-time data synchronization and secure user authentication for seamless end-user interaction.\nImplemented dynamic, reusable component architecture to support modular feature expansion and maintainability.\nIntegrated Firebase Authentication, Firestore database, and Cloud Functions to power robust CRUD operations and serverless business logic.\nEnhanced user experience with external UI libraries for form validation, notifications, and responsive layouts across devices.\nDeployed to Firebase Hosting with CI/CD, ensuring zero-downtime updates and global CDN delivery for fast load times.\nProvided demo credentials and interactive walkthrough to showcase core product capabilities and drive stakeholder adoption.",
+		"tags": ["Vue.js", "Firebase", "TailwindCSS", "Figma"],
+		"image": "travelpal.png",
+		"gitHubUrl": "https://github.com/jacoblimjy/TravelPal",
+		"otherUrl": "https://www.youtube.com/watch?v=mdOf2EuANcI&ab_channel=JacobLim"
+	},
+	{
+		"title": "Stock Price Prediction with Sentiment Analysis",
+    "description": "Built end-to-end ETLT data pipeline using Apache Airflow to ingest stock prices, Finviz news headlines, and Twitter data into a Neon PostgreSQL warehouse\nEngineered text processing and sentiment analysis with FinancialBERT to enrich time-series data for predictive insights\nDesigned and deployed an interactive Looker Studio dashboard featuring sector-level, individual stock, and sentiment-price visualizations\nDeveloped LSTM forecasting models combining sentiment scores and moving averages, with real-time prediction overlays in the dashboard\nOptimized SQL queries through targeted WHERE clauses and join strategies, reducing DAG run times and dashboard load latency\nLeveraged serverless Neon and CI/CD-driven Looker deployment for scalable, reliable financial analytics delivery",
+		"tags": [
+			"Apache Airflow",
+			"PostgreSQL",
+			"FinancialBERT",
+			"LSTM",
+			"Looker Studio"
+		],
+		"image": "stocksentiment.png",
+		"gitHubUrl": "https://github.com/jacoblimjy/stock-prediction"
+	},
+	{
+		"title": "Hybrid Course Recommendation System",
+    "description": "Developed a hybrid course recommendation engine for MOOC learners, integrating collaborative, content-based, graph and implicit-feedback models to deliver personalized suggestions.\nEngineered end-to-end data pipeline merging multiple Coursera datasets and LinkedIn job-skill profiles, applying NLP (spaCy) to bridge user skill gaps.\nImplemented and benchmarked six algorithms (user/item CF, content filtering, LightGCN, NCF, LightFM, job-course matching) and fused their scores via adaptive weighting for optimal Precision@10, Recall@10, F1@10.\nDesigned new features—demeaned ratings and popularity score via feature crossing—to normalize user biases and capture true course engagement.",
+		"tags": ["TensorFlow", "Scikit-Learn", "LightGCN", "LightFM", "spaCy"],
+		"image": "courserecommendation.png",
+		"gitHubUrl": "https://github.com/jacoblimjy/Hybrid_Course_Recommendation_System"
+	},
+  {
+    "title": "IMDb Sentiment Analysis",
+    "description": "Developed an end-to-end sentiment analysis system for IMDb movie reviews, delivering binary positive/negative classification with robust performance\nImplemented comprehensive data preprocessing: noise removal, normalization, stopword handling, lemmatization, tokenization, and negation retention\nEngineered feature pipelines using BoW and TF-IDF with unigrams, bigrams, trigrams, and term-frequency filtering to optimize model input\nBuilt and benchmarked ML models (Logistic Regression, SVM, Multinomial Naïve Bayes) and DL architectures (CNN, Bidirectional LSTM, DistilBERT), achieving 92.0% accuracy with fine-tuned DistilBERT\nConducted exploratory data analysis—word clouds, n-gram frequency distributions, element counts—to guide feature engineering and model selection\nEvaluated models on accuracy, precision, recall, and F1-score; analyzed misclassifications to identify mixed-sentiment and sarcasm challenges",
+    "tags": [
+      "NLTK",
+      "Scikit-learn",
+      "PyTorch",
+      "Hugging Face Transformers"
+    ],
+    "image" : "imdbsentimentanalysis.png",
+    "gitHubUrl": "https://github.com/jacoblimjy/IMDB_sentiment_analysis"
+  },
+  {
+		"title": "Popup Verbal Reasoning Challenge Platform",
+		"description": "Developed an AI-driven adaptive learning platform that dynamically generates verbal reasoning questions, answers, and step-by-step explanations using OpenAI GPT-o3-mini, with real-time difficulty adjustment based on student performance.\nEngineered LLM design: selected GPT-o3-mini for its deterministic, structured reasoning; implemented a multi-pronged prompt engineering strategy including role prompting as “puzzle question generator,” few-shot learning with curriculum-aligned examples, chain-of-thought templates, and context management to enforce format and minimize hallucinations .\nDevised a strict, reusable prompt structure—comprising role description, mandatory puzzle components, constraints/validity rules, and JSON output enforcement—applied across four question types (“Use a Rule to Make a Word,” “Complete a Word Pair,” “Word Ladders,” “Anagram in a Sentence”) and three difficulty levels .\nBuilt a modular pipeline with YAML‐based prompt templates and pluggable Python evaluation scripts for rule-based validation and automated error checking; enabled seamless addition of new question types by registering templates and validators.\nIntegrated a role-based interface and real-time analytics dashboard for parents, students, and admins—visualizing accuracy, response time, and topic-level insights—with workflows for AI question generation, manual review, and approval.",
+		"tags": [
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"Node.js",
+			"Express",
+			"MySQL",
+			"LLM"
+		],
+		"image": "popup.png",
+		"gitHubUrl": "https://github.com/jacoblimjy/popup"
+	},
+	{
+		"title": "Analysis of Airline Seat Booking System",
+		"description": "Conducted comprehensive performance comparison across metrics including destination coverage, flight volume, delay profiles (arrival, departure), taxi times, cancellations, and diversions for Acorn and Berry Airlines.\nPerformed regression analyses (R²) to evaluate the influence of distance, security, NAS, weather, late aircraft, airline, and departure delays on arrival delays, identifying departure and airline delays as primary drivers.\nAnalyzed temporal patterns by time-of-day and day-of-week intervals, revealing peak average arrival delays in evening hours and diminishing operational efficiency later in the day.\nMapped geographical distribution of weather delays and cancellations, pinpointing coastal states (Texas, Florida, Georgia) as high-risk areas and correlating weather incidents with cancellation rates.\nSynthesized data-driven recommendations: implement automated check-in and baggage handling, optimize staffing for late-night operations, and schedule flights around weather forecasts to reduce delays and cancellations.",
+		"tags": ["SQL", "Tableau"],
+		"image": "TASS.png",
+		"gitHubUrl": "https://github.com/jacoblimjy/Analytics-The-Airline-Seat-booking-System-TASS/blob/main/Full%20Analysis%20-%20Airlines%20Comparison/Full%20Analysis%20-%20Airlines%20Comparison.pdf"
+	},
+	{
+		"title": "TikTok Shop",
+		"description": "A reimagination of TikTok's Ecommerce feature built for TikTok Hackathon 2023. A full stack web app that allows users to browse and purchase products from TikTok creators and for creators to manage their products.",
+		"tags": ["Vue 3", "Nuxt 3", "Tailwind"],
+		"image": "tiktokshop.jpeg",
+		"gitHubUrl": "https://github.com/jacoblimjy/Analytics-The-Airline-Seat-booking-System-TASS/blob/main/Full%20Analysis%20-%20Airlines%20Comparison/Full%20Analysis%20-%20Airlines%20Comparison.pdf"
+	}
+]
