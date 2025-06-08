@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { BsCheckCircle } from "react-icons/bs";
 import PatternedImage from "./PatternedImage";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
@@ -43,7 +44,14 @@ export default function Projects() {
             <PatternedImage src={project.imageUrl} alt={project.title} />
             <div className="p-4 text-left">
               <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-base text-gray-200 mb-2 text-left whitespace-pre-line max-h-32 overflow-y-auto">{project.description}</p>
+              <ul className="text-sm text-gray-200 mb-2 text-left space-y-1 max-h-32 overflow-y-auto pr-1 scrollbar">
+                {project.description.split("\n").map((line, lineIndex) => (
+                  <li key={lineIndex} className="flex gap-2 items-start">
+                    <BsCheckCircle className="w-3 h-3 text-blue-400 mt-[2px] flex-shrink-0" />
+                    <span className="whitespace-pre-line">{line}</span>
+                  </li>
+                ))}
+              </ul>
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag, idx) => (
                   <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
@@ -86,7 +94,14 @@ export default function Projects() {
             </button>
             <h3 className="text-xl font-semibold text-white mb-2">{selected.title}</h3>
             <PatternedImage src={selected.imageUrl} alt={selected.title} heightClass="h-60" />
-            <p className="text-base text-gray-200 mb-4 text-left whitespace-pre-line">{selected.description}</p>
+            <ul className="text-sm text-gray-200 mb-4 text-left space-y-1 scrollbar pr-1 max-h-60 overflow-y-auto">
+              {selected.description.split("\n").map((line, lineIndex) => (
+                <li key={lineIndex} className="flex gap-2 items-start">
+                  <BsCheckCircle className="w-3 h-3 text-blue-400 mt-[2px] flex-shrink-0" />
+                  <span className="whitespace-pre-line">{line}</span>
+                </li>
+              ))}
+            </ul>
             <ul className="flex flex-wrap gap-2 mb-4">
               {selected.tags.map((tag, idx) => (
                 <li key={idx} className="px-2 py-1 text-xs bg-white/20 rounded-full text-gray-200">
