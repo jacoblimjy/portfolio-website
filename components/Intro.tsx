@@ -70,8 +70,8 @@ export default function Intro() {
 					<span className="font-bold">Hello, I am Jacob!</span>
 				</div>
 
-				<ReactRotatingText
-					items={["Data Scientist", "Developer"]}
+                                <ReactRotatingText
+                                        items={["Machine Learning Engineer", "Developer"]}
 					pause={2000}
 					typingInterval={150}
 					deletingInterval={70}
